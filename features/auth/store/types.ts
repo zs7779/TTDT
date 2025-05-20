@@ -1,6 +1,6 @@
 export interface User {
   id: string;
-  name: string;
+  username: string;
   email: string;
   // add other fields as needed
 }
@@ -10,4 +10,9 @@ export interface AuthState {
   token: string | null;
   loading: boolean;
   error: string | null;
+}
+
+export interface Login {
+  username: string;
+  password: string;
 }

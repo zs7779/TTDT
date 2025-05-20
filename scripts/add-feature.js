@@ -64,10 +64,17 @@ export const ${featureName}Api = createApi({
     getExample: builder.query<${capitalize(featureName)}, void>({
       query: () => "/${featureName}",
     }),
+    postExample: builder.mutation<${capitalize(featureName)}, { text: string }>({
+      query: ({ text }) => ({
+        url: "/${featureName}",
+        method: "POST",
+        body: { text },
+      }),
+    }),
   }),
 });
 
-export const { useGetExampleQuery } = ${featureName}Api;
+export const { useGetExampleQuery, usePostExampleMutation } = ${featureName}Api;
 `,
   },
   {
